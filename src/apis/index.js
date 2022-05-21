@@ -24,7 +24,7 @@ export const fetchPopularData = async () => {
     },
   });
 };
-export const FetchSelectedData = async (id) => {
+export const fetchSelectedData = async (id) => {
   return await youtube.get("videos", {
     params: {
       ...params,
@@ -32,7 +32,7 @@ export const FetchSelectedData = async (id) => {
     },
   });
 };
-export const fetchSelectedData = async (id) => {
+export const fetchRelatedData = async (id) => {
   return await youtube.get("/search", {
     params: {
       ...params,

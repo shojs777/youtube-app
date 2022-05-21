@@ -28,8 +28,8 @@ const Top = () => {
                 id={popular.id}
                 key={popular.id}
                 src={
-                  popular.snippet?.thumbnails?.standard?.url
-                    ? popular.snippet?.thumbnails?.standard.url
+                  popular.snippet?.thumbnails?.medium?.url
+                    ? popular.snippet?.thumbnails?.medium.url
                     : null
                 }
                 title={popular.snippet.title}
