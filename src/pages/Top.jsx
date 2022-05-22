@@ -1,6 +1,6 @@
 import { React, useContext, useEffect } from "react";
 import Layout from "../components/Layout/Layout.jsx";
-import { fetchPopularData } from "../apis";
+import { fetchPopularData } from "../apis/index";
 import { Store } from "../store";
 import VideoGrid from "../components/VideoGrid/VideoGrid.jsx";
 import VideoGridItem from "../components/VideoGridItem/VideoGridItem.jsx";
@@ -21,7 +21,7 @@ const Top = () => {
   return (
     <Layout>
       <VideoGrid>
-        {globalState.popular &&
+        {globalState.popular ? (
           globalState.popular.map((popular) => {
             return (
               <VideoGridItem
@@ -35,7 +35,10 @@ const Top = () => {
                 title={popular.snippet.title}
               />
             );
-          })}
+          })
+        ) : (
+          <span>no data</span>
+        )}
       </VideoGrid>
     </Layout>
   );
